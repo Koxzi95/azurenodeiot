@@ -3,8 +3,7 @@ FROM node:6.3.1
 MAINTAINER tom.jcox@outlook.com
 
 # Set non-root user
-RUN groupadd -r app && useradd -r -g app app
-RUN -u "app"
+# RUN groupadd -r app && useradd -r -g app app
 
 # Create app directory
 RUN mkdir -p /usr/src/app
