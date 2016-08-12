@@ -1,4 +1,4 @@
-FROM FROM node:6.3.1
+FROM node:6.3.1
 
 MAINTAINER tom.jcox@outlook.com
 
