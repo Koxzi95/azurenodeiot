@@ -1,8 +1,8 @@
 {
   "name": "azurenodeiot",
   "version": "0.1.0",
-  "description": "A node program which sends a message to an Azure IoT Hub",
-  "main": "index.js",
+  "description": "A node program which sends a message to an Azure IoT Hub.",
+  "main": "simulateddevice.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
