@@ -15,6 +15,7 @@ function printResultFor(op) {
   };
 }
 
+// Error catching. 
 var connectCallback = function (err) {
   if (err) {
     console.log('Could not connect: ' + err);
