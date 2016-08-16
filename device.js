@@ -4,7 +4,7 @@ var clientFromConnectionString = require('azure-iot-device-amqp').clientFromConn
 var Message = require('azure-iot-device').Message;
 var ip = require('ip');
 
-var connectionString = 'HostName=dockernode.azure-devices.net;DeviceId=dockercontainerdevice01;SharedAccessKey=dbrYXUBvpcezLbsjKWB7mcCOZfaxSlcvsD/RrPH5Igs=';
+var connectionString = 'HostName=ia3dockeriot.azure-devices.net;DeviceId=dockercontainerdevice01;SharedAccessKey=dbrYXUBvpcezLbsjKWB7mcCOZfaxSlcvsD/RrPH5Igs=';
 
 var client = clientFromConnectionString(connectionString);
 
