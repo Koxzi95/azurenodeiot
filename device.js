@@ -4,7 +4,7 @@ var clientFromConnectionString = require('azure-iot-device-amqp').clientFromConn
 var Message = require('azure-iot-device').Message;
 var ip = require('ip');
 
-var connectionString = 'HostName=dockernode.azure-devices.net;DeviceId=dockeriot01;SharedAccessKey=XbJbcF5+XFg56+hLuArUFHDR0/qfbeAg82PQ7d+jZbA=';
+var connectionString = 'HostName=dockernode.azure-devices.net;DeviceId=dockercontainerdevice01;SharedAccessKey=dbrYXUBvpcezLbsjKWB7mcCOZfaxSlcvsD/RrPH5Igs=';
 
 var client = clientFromConnectionString(connectionString);
 
@@ -15,7 +15,7 @@ function printResultFor(op) {
   };
 }
 
-// Error catching. 
+// Error catching.
 var connectCallback = function (err) {
   if (err) {
     console.log('Could not connect: ' + err);
@@ -25,7 +25,7 @@ var connectCallback = function (err) {
     // Create a message and send it to the IoT Hub every second
     setInterval(function(){
         var windSpeed = 10 + (Math.random() * 4);
-        var data = JSON.stringify({ deviceId: 'dockeriot01', windSpeed: windSpeed, ip: ip.address() });
+        var data = JSON.stringify({ deviceId: 'dockercontainerdevice01', windSpeed: windSpeed, ip: ip.address() });
         var message = new Message(data);
         console.log("Sending message: " + message.getData());
         client.sendEvent(message, printResultFor('send'));
