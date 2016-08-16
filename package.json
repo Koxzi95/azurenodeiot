@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/IACubed/azurenodeiot#readme",
   "dependencies": {
-    "azure-iot-device": "^1.0.11",
-    "azure-iot-device-amqp": "^1.0.11",
+    "azure-iot-device": "^1.0.12",
+    "azure-iot-device-amqp": "^1.0.12",
     "ip": "^1.1.3"
   }
 }
