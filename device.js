@@ -3,6 +3,7 @@
 var clientFromConnectionString = require('azure-iot-device-amqp').clientFromConnectionString;
 var Message = require('azure-iot-device').Message;
 var ip = require('ip');
+var moment = require ('moment');
 
 var connectionString = 'HostName=ia3dockeriot.azure-devices.net;DeviceId=dockercontainerdevice01;SharedAccessKey=dbrYXUBvpcezLbsjKWB7mcCOZfaxSlcvsD/RrPH5Igs=';
 
@@ -26,7 +27,10 @@ var connectCallback = function (err) {
     setInterval(function(){
         var windSpeed = 10 + (Math.random() * 4);
         var temp = 2 + (Math.random() * 5);
-        var data = JSON.stringify({ deviceId: 'dockercontainerdevice01', windSpeed: windSpeed, temp: temp, ip: ip.address() });
+        var timestamp = moment().format('lll');
+        //var date = new Date();
+        //var current_hour = date.getHours();
+        var data = JSON.stringify({ deviceId: 'dockercontainerdevice01', windSpeed: windSpeed, temp: temp, timestamp: timestamp, ip: ip.address() });
         var message = new Message(data);
         console.log("Sending message: " + message.getData());
         client.sendEvent(message, printResultFor('send'));
