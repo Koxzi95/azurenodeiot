@@ -5,7 +5,7 @@ var Message = require('azure-iot-device').Message;
 var ip = require('ip');
 var moment = require ('moment');
 
-var connectionString = 'HostName=ia3dockeriot.azure-devices.net;DeviceId=dockercontainerdevice01;SharedAccessKey=dbrYXUBvpcezLbsjKWB7mcCOZfaxSlcvsD/RrPH5Igs=';
+var connectionString = 'HostName=ia3iothub.azure-devices.net;DeviceId=myDockerDevice;SharedAccessKey=kZzUC4b+fVT5F5+PM3oqa14TEH4p8x/6+NVnk4zdomY=';
 
 var client = clientFromConnectionString(connectionString);
 
@@ -30,7 +30,7 @@ var connectCallback = function (err) {
         var timestamp = moment().format('lll');
         //var date = new Date();
         //var current_hour = date.getHours();
-        var data = JSON.stringify({ deviceId: 'dockercontainerdevice01', windSpeed: windSpeed, temp: temp, timestamp: timestamp, ip: ip.address() });
+        var data = JSON.stringify({ deviceId: 'myDockerDevice', windSpeed: windSpeed, temp: temp, timestamp: timestamp, ip: ip.address() });
         var message = new Message(data);
         console.log("Sending message: " + message.getData());
         client.sendEvent(message, printResultFor('send'));
